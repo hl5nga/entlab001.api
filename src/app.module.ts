@@ -7,6 +7,10 @@ import { User } from './users/entities/user.entity'
 import { ConfigModule } from '@nestjs/config';
 import { CompanysModule } from './companys/companys.module';
 import { Company } from './companys/entities/company.entity';
+import { ItemsModule } from './items/items.module';
+import { Item } from './items/entities/item.entity'
+import { ContactsModule } from './contacts/contacts.module';
+import { Contact } from './contacts/entities/contact.entity';
 
 
 @Module({
@@ -20,11 +24,13 @@ import { Company } from './companys/entities/company.entity';
       password:  process.env.DB_PASSWORD,
       database:  process.env.DB_DATABASE,
 
-      entities: [User , Company ],
+      entities: [User , Company, Item , Contact],
       synchronize: true,
     }),
     UsersModule,
-    CompanysModule
+    CompanysModule,
+    ItemsModule,
+    ContactsModule, 
   ], 
     exports: [TypeOrmModule] , 
   
