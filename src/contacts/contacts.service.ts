@@ -10,7 +10,9 @@ export class ContactsService {
   constructor(
     @InjectRepository(Contact)
     private contacts: Repository<Contact>,
-  ) {}
+  ) {
+    
+  }
  
   private id = 0; 
 
